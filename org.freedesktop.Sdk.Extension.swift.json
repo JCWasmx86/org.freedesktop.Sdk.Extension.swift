@@ -1,0 +1,60 @@
+{
+  "id": "org.freedesktop.Sdk.Extension.swift",
+  "branch": "22.08",
+  "runtime": "org.freedesktop.Sdk",
+  "build-extension": true,
+  "sdk": "org.freedesktop.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.llvm14"
+  ],
+  "runtime-version": "22.08",
+  "separate-locales": false,
+  "appstream-compose": false,
+  "build-options": {
+    "prefix": "/usr/lib/sdk/swift",
+    "prepend-pkg-config-path": "/usr/lib/sdk/swift/lib/pkgconfig/",
+    "prepend-path": "/usr/lib/sdk/swift/bin/:/usr/lib/sdk/llvm14/bin",
+    "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib:/usr/lib/sdk/swift/lib"
+  },
+  "cleanup": [
+    "/share/info",
+    "/share/man"
+  ],
+  "modules": [
+        {
+            "name": "libedit",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.thrysoee.dk/editline/libedit-20221030-3.1.tar.gz",
+                    "sha256": "f0925a5adf4b1bf116ee19766b7daa766917aec198747943b1c4edf67a4be2bb"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man"
+            ]
+        },
+    {
+      "name": "swift",
+      "buildsystem": "simple",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.swift.org/swift-5.7.3-release/ubuntu2204/swift-5.7.3-RELEASE/swift-5.7.3-RELEASE-ubuntu22.04.tar.gz",
+          "sha256": "312a18d0d2f207620349e3a373200f369fc1a6aad1b7f2365d55aa8a10881a59"
+        }
+      ],
+      "build-commands": [
+        "mkdir -p /usr/lib/sdk/swift",
+        "cp -R usr/* /usr/lib/sdk/swift",
+        "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/bin/lldb-server",
+        "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so.13.0.0git",
+        "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so",
+        "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so.13git"
+      ]
+    }
+  ]
+}
