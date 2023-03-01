@@ -14,8 +14,7 @@
         "prefix": "/usr/lib/sdk/swift",
         "prepend-pkg-config-path": "/usr/lib/sdk/swift/lib/pkgconfig/",
         "prepend-path": "/usr/lib/sdk/swift/bin/:/usr/lib/sdk/llvm14/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib:/usr/lib/sdk/swift/lib",
-        "build-args": [ "--share=network" ]
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib:/usr/lib/sdk/swift/lib"
     },
     "cleanup": [
         "/share/info",
@@ -58,33 +57,51 @@
             ]
         },
         {
-            "name": "SwiftLint",
-            "buildsystem": "simple",
-            "sources": [
-                {
-                  "type": "archive",
-                  "url": "https://github.com/realm/SwiftLint/archive/refs/tags/0.50.3.tar.gz",
-                  "sha256": "e901e8635ca26e251b3a9105ebe8a8e26a0f987fc3891aaf95b5d23c316440f2"
-                }
-            ],
-            "build-commands": [
-                "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
-                "cp .build/release/swiftlint /usr/lib/sdk/swift/bin/"
-            ]
-        },
-        {
           "name": "swift-format",
           "buildsystem": "simple",
           "sources": [
               {
                   "type": "archive",
                   "url": "https://github.com/apple/swift-format/archive/refs/tags/0.50700.1.tar.gz",
-                  "sha256": "0d6e4a87975de7a294504dcdfae2432b419201414c3e1ec4b878623eab20e490",
-              }
+                  "sha256": "0d6e4a87975de7a294504dcdfae2432b419201414c3e1ec4b878623eab20e490"
+              },
+              {
+				  "type": "git",
+				  "url": "https://github.com/apple/swift-argument-parser.git",
+				  "disable-shallow-clone": true,
+				  "branch": "main",
+				  "dest": "swift-argument-parser"
+		      },
+		      {
+				  "type": "git",
+				  "url": "https://github.com/apple/swift-syntax.git",
+				  "disable-shallow-clone": true,
+				  "branch": "main",
+				  "dest": "swift-syntax"
+		      },
+		      {
+				  "type": "git",
+				  "url": "https://github.com/apple/swift-system.git",
+				  "disable-shallow-clone": true,
+				  "branch": "main",
+				  "dest": "swift-system"
+		      },
+		      {
+				  "type": "git",
+				  "url": "https://github.com/apple/swift-tools-support-core.git",
+				  "disable-shallow-clone": true,
+				  "branch": "main",
+				  "dest": "swift-tools-support-core"
+		      },
+		      {
+		          "type": "file",
+		          "path": "swift-format-setup-offline.sh"
+		      }
           ],
           "build-commands": [
+              "./swift-format-setup-offline.sh",
               "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
-              "cp .build/release/swift-format /usr/lib/sdk/swift/bin/",
+              "cp .build/release/swift-format /usr/lib/sdk/swift/bin/"
           ]
         }
     ]
