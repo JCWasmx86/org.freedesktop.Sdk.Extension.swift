@@ -135,6 +135,7 @@
             "build-commands": [
                 "./swift-lint-setup-offline.sh",
                 "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
+                "strip -s .build/release/swiftlint",
                 "cp .build/release/swiftlint /usr/lib/sdk/swift/bin/"
             ]
         },
@@ -183,6 +184,7 @@
             "build-commands": [
                 "./swift-format-setup-offline.sh",
                 "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
+                "strip -s .build/release/swift-format",
                 "cp .build/release/swift-format /usr/lib/sdk/swift/bin/"
             ]
         }
