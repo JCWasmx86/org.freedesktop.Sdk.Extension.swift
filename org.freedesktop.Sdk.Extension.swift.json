@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.swift.org/swift-5.7.3-release/ubuntu2204/swift-5.7.3-RELEASE/swift-5.7.3-RELEASE-ubuntu22.04.tar.gz",
-                    "sha256": "312a18d0d2f207620349e3a373200f369fc1a6aad1b7f2365d55aa8a10881a59"
+                    "url": "https://download.swift.org/swift-5.7.3-release/centos7/swift-5.7.3-RELEASE/swift-5.7.3-RELEASE-centos7.tar.gz",
+                    "sha256": "10138dce4306309fdd77c530a7c19e4d00586cdaf5698dd7412004bcb6d86d28"
                 }
             ],
             "build-commands": [
@@ -53,7 +53,9 @@
                 "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/bin/lldb-server",
                 "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so.13.0.0git",
                 "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so",
-                "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so.13git"
+                "sed -i s/libedit.so.2/libedit.so.0/g /usr/lib/sdk/swift/lib/liblldb.so.13git",
+                "ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/sdk/swift/lib/libtinfo.so.5",
+                "ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6 /usr/lib/sdk/swift/lib/libncurses.so.5"
             ]
         },
         {
