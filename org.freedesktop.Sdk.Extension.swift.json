@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.swift.org/swift-5.7.3-release/centos7/swift-5.7.3-RELEASE/swift-5.7.3-RELEASE-centos7.tar.gz",
-                    "sha256": "10138dce4306309fdd77c530a7c19e4d00586cdaf5698dd7412004bcb6d86d28"
+                    "url": "https://download.swift.org/swift-5.8-release/centos7/swift-5.8-RELEASE/swift-5.8-RELEASE-centos7.tar.gz",
+                    "sha256": "c9b5ba7d01dca69089f2651c49af370879156f9f2dca062853831a908fca16b2"
                 }
             ],
             "build-commands": [
@@ -64,8 +64,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/realm/SwiftLint/archive/refs/tags/0.50.3.tar.gz",
-                    "sha256": "e901e8635ca26e251b3a9105ebe8a8e26a0f987fc3891aaf95b5d23c316440f2"
+                    "url": "https://github.com/realm/SwiftLint/archive/refs/tags/0.52.2.zip",
+                    "sha256": "8dc80dc27f4ff250e9ad02e46b01d9bccb31e5c81fa1a3e8ba48dd5fbde7eddf"
                 },
                 {
                     "type": "git",
@@ -145,8 +145,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/apple/swift-format/archive/refs/tags/0.50700.1.tar.gz",
-                    "sha256": "0d6e4a87975de7a294504dcdfae2432b419201414c3e1ec4b878623eab20e490"
+                    "url": "https://github.com/apple/swift-format/archive/refs/tags/508.0.0.tar.gz",
+                    "sha256": "5502652008bbcbedbd105a1d60cdbbe9718f832fcebc614f8d9c04e0817250b6"
                 },
                 {
                     "type": "git",

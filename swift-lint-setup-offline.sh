@@ -9,16 +9,16 @@ cd checkouts/CollectionConcurrencyKit || exit 1
 git checkout b4f23e24b5a1bff301efc5e70871083ca029ff95
 cd ../..
 cd checkouts/CryptoSwift || exit 1
-git checkout 19b3c3ceed117c5cc883517c4e658548315ba70b
+git checkout eee9ad754926c40a0f7e73f152357d37b119b7fa
 cd ../..
 cd checkouts/SourceKitten || exit 1
-git checkout fc12c0f182c5cf80781dd933b17a82eb98bd7c61
+git checkout b6dc09ee51dfb0c66e042d2328c017483a1a5d56
 cd ../..
 cd checkouts/swift-argument-parser || exit 1
-git checkout fddd1c00396eed152c45a46bea9f47b98e59301d
+git checkout 4ad606ba5d7673ea60679a61ff867cc1ff8c8e86
 cd ../..
 cd checkouts/swift-syntax || exit 1
-git checkout 76d01195182593ff34f5ada1ab0910fae190fc9c
+git checkout 27cd6190ce0628847a3f8050794d6e627ad79c08
 cd ../..
 cd checkouts/SwiftyTextTable || exit 1
 git checkout c6df6cf533d120716bff38f8ff9885e1ce2a4ac3
@@ -27,7 +27,7 @@ cd checkouts/SWXMLHash || exit 1
 git checkout 4d0f62f561458cbe1f732171e625f03195151b60
 cd ../..
 cd checkouts/Yams || exit 1
-git checkout 01835dc202670b5bb90d07f3eae41867e9ed29f6
+git checkout f47ba4838c30dbd59998a4e4c87ab620ff959e8a
 cd ../../checkouts || exit 1
 cp -Rv CollectionConcurrencyKit/.git/* ../repositories/CollectionConcurrencyKit-9b263e6b
 cp -Rv CryptoSwift/.git/* ../repositories/CryptoSwift-72c2bbc7
@@ -38,4 +38,4 @@ cp -Rv SwiftyTextTable/.git/* ../repositories/SwiftyTextTable-dce42391
 cp -Rv SWXMLHash/.git/* ../repositories/SWXMLHash-0bda306e
 cp -Rv Yams/.git/* ../repositories/Yams-00fc82b0
 cd ../..
-patch Package.swift swiftlint.patch
+patch Package.swift swiftlint.patch || exit
