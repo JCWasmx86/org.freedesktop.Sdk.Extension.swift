@@ -1,13 +1,13 @@
 {
     "id": "org.freedesktop.Sdk.Extension.swift",
-    "branch": "22.08",
+    "branch": "23.08",
     "runtime": "org.freedesktop.Sdk",
     "build-extension": true,
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm14"
+        "org.freedesktop.Sdk.Extension.llvm16"
     ],
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "separate-locales": false,
     "appstream-compose": false,
     "build-options": {
@@ -137,55 +137,6 @@
                 "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
                 "strip -s .build/release/swiftlint",
                 "cp .build/release/swiftlint /usr/lib/sdk/swift/bin/"
-            ]
-        },
-        {
-            "name": "swift-format",
-            "buildsystem": "simple",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/apple/swift-format/archive/refs/tags/508.0.0.tar.gz",
-                    "sha256": "5502652008bbcbedbd105a1d60cdbbe9718f832fcebc614f8d9c04e0817250b6"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/apple/swift-argument-parser.git",
-                    "disable-shallow-clone": true,
-                    "branch": "main",
-                    "dest": "swift-argument-parser"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/apple/swift-syntax.git",
-                    "disable-shallow-clone": true,
-                    "branch": "main",
-                    "dest": "swift-syntax"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/apple/swift-system.git",
-                    "disable-shallow-clone": true,
-                    "branch": "main",
-                    "dest": "swift-system"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/apple/swift-tools-support-core.git",
-                    "disable-shallow-clone": true,
-                    "branch": "main",
-                    "dest": "swift-tools-support-core"
-                },
-                {
-                    "type": "file",
-                    "path": "swift-format-setup-offline.sh"
-                }
-            ],
-            "build-commands": [
-                "./swift-format-setup-offline.sh",
-                "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
-                "strip -s .build/release/swift-format",
-                "cp .build/release/swift-format /usr/lib/sdk/swift/bin/"
             ]
         }
     ]
