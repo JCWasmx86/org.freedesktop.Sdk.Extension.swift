@@ -138,6 +138,69 @@
                 "strip -s .build/release/swiftlint",
                 "cp .build/release/swiftlint /usr/lib/sdk/swift/bin/"
             ]
+        },
+        {
+            "name": "swift-format",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/apple/swift-format/archive/refs/tags/509.0.0.tar.gz",
+                    "sha256": "3041b470f6de7c156cf5898bc59645073c29def8dea66f9f356681163cae371e"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-argument-parser.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-argument-parser"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-syntax.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-syntax"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-system.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-system"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-tools-support-core.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-tools-support-core"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-markdown.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-markdown"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-cmark.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-cmark"
+                },
+                {
+                    "type": "file",
+                    "path": "swift-format-setup-offline.sh"
+                }
+            ],
+            "build-commands": [
+                "./swift-format-setup-offline.sh",
+                "/usr/lib/sdk/swift/bin/swift build -c release --skip-update",
+                "strip -s .build/release/swift-format",
+                "cp .build/release/swift-format /usr/lib/sdk/swift/bin/"
+            ]
         }
     ]
 }
