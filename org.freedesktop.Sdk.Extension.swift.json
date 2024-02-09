@@ -1,13 +1,13 @@
 {
     "id": "org.freedesktop.Sdk.Extension.swift",
-    "branch": "22.08",
+    "branch": "23.08",
     "runtime": "org.freedesktop.Sdk",
     "build-extension": true,
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm14"
+        "org.freedesktop.Sdk.Extension.llvm16"
     ],
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "separate-locales": false,
     "appstream-compose": false,
     "build-options": {
@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.swift.org/swift-5.8-release/centos7/swift-5.8-RELEASE/swift-5.8-RELEASE-centos7.tar.gz",
-                    "sha256": "c9b5ba7d01dca69089f2651c49af370879156f9f2dca062853831a908fca16b2"
+                    "url": "https://download.swift.org/swift-5.9.1-release/centos7/swift-5.9.1-RELEASE/swift-5.9.1-RELEASE-centos7.tar.gz",
+                    "sha256": "85f76d092e50794cafc45229d6534c02abb25f4f62f8d923c83b2e7c08a6eada"
                 }
             ],
             "build-commands": [
@@ -64,8 +64,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/realm/SwiftLint/archive/refs/tags/0.52.2.zip",
-                    "sha256": "8dc80dc27f4ff250e9ad02e46b01d9bccb31e5c81fa1a3e8ba48dd5fbde7eddf"
+                    "url": "https://github.com/realm/SwiftLint/archive/refs/tags/0.53.0.zip",
+                    "sha256": "2a474c97650ac7951f9545aed03a034cb424a16e982ecc61a98bde11397854c5"
                 },
                 {
                     "type": "git",
@@ -145,8 +145,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/apple/swift-format/archive/refs/tags/508.0.0.tar.gz",
-                    "sha256": "5502652008bbcbedbd105a1d60cdbbe9718f832fcebc614f8d9c04e0817250b6"
+                    "url": "https://github.com/apple/swift-format/archive/refs/tags/509.0.0.tar.gz",
+                    "sha256": "3041b470f6de7c156cf5898bc59645073c29def8dea66f9f356681163cae371e"
                 },
                 {
                     "type": "git",
@@ -175,6 +175,20 @@
                     "disable-shallow-clone": true,
                     "branch": "main",
                     "dest": "swift-tools-support-core"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-markdown.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-markdown"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-cmark.git",
+                    "disable-shallow-clone": true,
+                    "branch": "main",
+                    "dest": "swift-cmark"
                 },
                 {
                     "type": "file",
